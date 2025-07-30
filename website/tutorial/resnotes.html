@@ -1,0 +1,174 @@
+<HTML>
+
+<LINK HREF="style.css" REL="STYLESHEET" TYPE="text/css">
+
+
+<!-- Mirrored from www.winprog.org/tutorial/resnotes.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 02:45:06 GMT -->
+<HEAD>
+<TITLE>Win32 Tutorial - Resource file notes</TITLE>
+<script async defer data-website-id="df3b748f-adc6-4d59-ae96-899c1a09e8f8" src="../../stats.bitrot.ca/umami.js"></script>
+
+</HEAD>
+
+<BODY>
+<TABLE CLASS="PRIMARY" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0" ID="Table1">
+<TR HEIGHT="85">
+    <TD CLASS="PRIMARYHEADER" ALIGN="left" VALIGN="top">
+		<h1>theForger's Win32 API Programming Tutorial</h1>
+    </TD>
+</TR>
+<TR>
+    <TD>
+        <TABLE WIDTH="100%" HEIGHT="100%" CLASS="SECONDARY" CELLSPACING="0" CELLPADDING="3" ID="Table2">
+        <TR>
+            <TD CLASS="SECONDARYLEFT" ALIGN="left" WIDTH="200" VALIGN="top">
+				<p><a href="index.html">Home</a></p>
+				Basics
+					<OL>
+					<LI><A HREF="start.html">Getting Started</A>
+					<LI><A HREF="simple_window.html">A Simple Window</A>
+					<LI><A HREF="window_click.html">Handling Messages</A>
+					<LI><A HREF="message_loop.html">The Message Loop</A>
+					<LI><A HREF="resources.html">Using Resources</A>
+					<LI><A HREF="menus.html">Menus and Icons</A>
+					<LI><A HREF="dialogs.html">Dialog Boxes</A>
+					<LI><A HREF="modeless_dialogs.html">Modeless Dialogs</A>
+					<LI><A HREF="controls.html">Standard Controls</A>
+					<LI><A HREF="dlgfaq.html">Dialog FAQ</A>
+					</OL>
+				Creating a simple application
+					<OL>
+					<LI><A HREF="app_one.html">Creating controls at runtime</A>
+					<LI><A HREF="app_two.html">Files and the common dialogs</A>
+					<LI><A HREF="app_three.html">Tool and Status bars</A>
+					<LI><A HREF="app_four.html">Multiple Document Interface</A>
+					</OL> 
+				Graphics Device Interface
+					<OL>
+					<LI><A HREF="bitmaps.html">Bitmaps and Device Contexts</A>
+					<LI><A HREF="transparency.html">Transparency</A>
+					<LI><A HREF="animation.html">Timers and Animation</A>
+					<LI><A HREF="fonts.html">Text, Fonts and Colours</A>
+					</OL>
+				Tools and Documentation
+					<OL>
+					<LI><A HREF="references.html">References</A>
+					<LI><A HREF="msvc.html">Free Visual C++</A>
+					</OL>
+				Appendices
+					<OL type="A">
+					<LI><A HREF="errors.html">Solutions to Common Errors</A>
+					<LI><A HREF="apivsmfc.html">API vs. MFC</A>
+					<LI><A HREF="resnotes.html">Resource file notes</A>
+					</OL>
+            </TD>
+            <TD CLASS="SECONDARYMAIN" ALIGN="left" VALIGN="top" ROWSPAN="2">
+                
+
+
+<H1>Resource file notes</H1>
+
+
+
+<H2>Argh!</H2>
+
+The one thing I really hated when I switched my primary development environment from Borland C++ to MS Visual C++
+was the way VC++ handles resource scripts (.rc files).
+
+<P>
+In BC++ was free to control the layout and content of the .rc files, and when using the resource editor, only 
+the things that I specifically changed in the editor got changed in the resource file.  Much to my dismay, the 
+VC++ resource editor will completely rewrite your .rc file, and possibly destroy or ignore any changes that 
+you personally make.  
+
+<P>
+This was terribly frustrating at first, but I basically learned to deal with it and it's 
+not SO bad after a while, since in general I don't write any amount of my resources by hand, but reserve that for
+minor changes that perhaps I can't quite accomplish in the editor.
+
+<H2>Compatibility</H2>
+
+One small challange for this tutorial was to make the resource files compile properly under VC++ and BC++ without 
+changes.  In the original tutorial I used the Borland naming convention for the resource header, which was 
+<CODE>project_name.rh</CODE>.  However by default in VC++ this header is ALWAYS called <CODE>resource.h</CODE>,
+so for simplicity I've adopted this for the current tutorial revision, as it doesn't impact BC++ at all. 
+
+<P>
+For the curious, it is possible to change the name of the resource that VC++ uses by editing the .rc file manually
+and changing the name in two places, once where it is <CODE>#include</CODE>d, and second where it is contained in a 
+<CODE>TEXTINCLUDE</CODE> resource.
+
+<P>
+The next problem is that by default VC++ requires the file <CODE>afxres.h</CODE> to be included in it's .rc files,
+whereas BC++ has all the necessary preprocessor macros defined automatically and requires no such include.  Another
+dumb thing about this is that <CODE>afxres.h</CODE> is only installed when you insall MFC which not everyone does,
+even when you are creating an API application which only requires <CODE>winres.h</CODE> which is always installed.
+
+<P>
+Since I work in VC++ and use it's resource editor I've solved this problem by slightly altering each .rc file that
+is generated to include the following:
+
+<PRE CLASS="SNIP">
+#ifndef __BORLANDC__
+#include "winres.h"
+#endif
+</PRE>
+
+Which under default circumstances would usually read:
+
+<PRE CLASS="SNIP">
+#include "afxres.h"
+</PRE>
+
+For those of you that are using VC++ you can find the option to change this text within the IDE under 
+"View > Resource Includes".  There is generally no need to ever use this in normal practice, it's simply
+a way I used to work around the problem of making things work with BC++ and VC++.
+
+<P>
+To those of you using BC++, I'm sorry about the extra mess in the .rc files that are generate by the VC++ editor, but
+it shouldn't interfere with anything.
+
+<H2>Compiling resources under BC++</H2>
+
+Try as I might I couldn't find a simple way to compile a program with BC++ that included RC files, and ultimately had
+to settle on the non-optimal configuration that you will find in the makefiles included with the source for this tutorial.
+You can find the notes for the BC++ compiler in <A HREF="bcpp.html">Free Borland C++ Command Line Tools<A>.
+
+            </TD>
+        </TR>
+	<TR>
+		<TD CLASS="SECONDARYLEFT" WIDTH="120" ALIGN="center" VALIGN="bottom">
+		&nbsp;
+		</TD>
+	</TR>
+        </TABLE>
+    </TD>
+</TR>
+<TR>
+    <TD CLASS="PRIMARYFOOTER" HEIGHT="20">
+	Copyright &copy; 1998-2022, Brook Miles (<a href="mailto:tutorial(nospam)winprog.org">tutorial(nospam)winprog.org</a>).  All rights reserved.
+</TD>
+</TR>
+</TABLE>
+
+<script type="text/javascript">
+<!--
+   var re = /\(nospam\)/ig;
+   var str;
+
+   for(i = 0;i < document.links.length;i++)
+   {
+      var link = document.links[i];
+	  var str = link.href;
+      link.href = str.replace(re, "@");
+
+	  str = link.innerHTML;
+      link.innerHTML = str.replace(re, "@");
+   }
+-->
+</script>
+
+</BODY>
+
+<!-- Mirrored from www.winprog.org/tutorial/resnotes.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 02:45:06 GMT -->
+</HTML>

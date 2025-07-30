@@ -1,0 +1,316 @@
+<HTML>
+
+<LINK HREF="style.css" REL="STYLESHEET" TYPE="text/css">
+
+
+<!-- Mirrored from www.winprog.org/tutorial/app_three.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 02:44:58 GMT -->
+<HEAD>
+<TITLE>App Part 3: Tool and Status bars</TITLE>
+<script async defer data-website-id="df3b748f-adc6-4d59-ae96-899c1a09e8f8" src="../../stats.bitrot.ca/umami.js"></script>
+
+</HEAD>
+
+<BODY>
+<TABLE CLASS="PRIMARY" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0" ID="Table1">
+<TR HEIGHT="85">
+    <TD CLASS="PRIMARYHEADER" ALIGN="left" VALIGN="top">
+		<h1>theForger's Win32 API Programming Tutorial</h1>
+    </TD>
+</TR>
+<TR>
+    <TD>
+        <TABLE WIDTH="100%" HEIGHT="100%" CLASS="SECONDARY" CELLSPACING="0" CELLPADDING="3" ID="Table2">
+        <TR>
+            <TD CLASS="SECONDARYLEFT" ALIGN="left" WIDTH="200" VALIGN="top">
+				<p><a href="index.html">Home</a></p>
+				Basics
+					<OL>
+					<LI><A HREF="start.html">Getting Started</A>
+					<LI><A HREF="simple_window.html">A Simple Window</A>
+					<LI><A HREF="window_click.html">Handling Messages</A>
+					<LI><A HREF="message_loop.html">The Message Loop</A>
+					<LI><A HREF="resources.html">Using Resources</A>
+					<LI><A HREF="menus.html">Menus and Icons</A>
+					<LI><A HREF="dialogs.html">Dialog Boxes</A>
+					<LI><A HREF="modeless_dialogs.html">Modeless Dialogs</A>
+					<LI><A HREF="controls.html">Standard Controls</A>
+					<LI><A HREF="dlgfaq.html">Dialog FAQ</A>
+					</OL>
+				Creating a simple application
+					<OL>
+					<LI><A HREF="app_one.html">Creating controls at runtime</A>
+					<LI><A HREF="app_two.html">Files and the common dialogs</A>
+					<LI><A HREF="app_three.html">Tool and Status bars</A>
+					<LI><A HREF="app_four.html">Multiple Document Interface</A>
+					</OL> 
+				Graphics Device Interface
+					<OL>
+					<LI><A HREF="bitmaps.html">Bitmaps and Device Contexts</A>
+					<LI><A HREF="transparency.html">Transparency</A>
+					<LI><A HREF="animation.html">Timers and Animation</A>
+					<LI><A HREF="fonts.html">Text, Fonts and Colours</A>
+					</OL>
+				Tools and Documentation
+					<OL>
+					<LI><A HREF="references.html">References</A>
+					<LI><A HREF="msvc.html">Free Visual C++</A>
+					</OL>
+				Appendices
+					<OL type="A">
+					<LI><A HREF="errors.html">Solutions to Common Errors</A>
+					<LI><A HREF="apivsmfc.html">API vs. MFC</A>
+					<LI><A HREF="resnotes.html">Resource file notes</A>
+					</OL>
+            </TD>
+            <TD CLASS="SECONDARYMAIN" ALIGN="left" VALIGN="top" ROWSPAN="2">
+                
+
+
+<H1>App Part 3: Tool and Status bars</H1>
+
+
+
+<P>Example: app_three</P>
+<IMG SRC="images/app_three.gif" ALT="[images/app_three.gif]" ALIGN="right">
+
+<H3>An IMPORTANT Word on Common Controls</H3>
+
+<P>
+As with all common controls, you must call <CODE>InitCommonControls()</CODE>
+<I>BEFORE</I> you try and use them.  You will need to <CODE>#include &lt;commctrl.h&gt;</CODE>
+in order to use this function and to get the functions and declarations necessary for
+use of the Common Controls.  You will also need to add <CODE>comctl32.lib</CODE>
+to your linker settings if it is not already there.  Note that <CODE>InitCommonControls()</CODE>
+is an older API, and for more control you can use <CODE>InitCommonControlsEx()</CODE> 
+(aka <I>InitCommonControlSex()</I>) which is also required for the most recent common controls.  However
+since I'm not using any of the advanced features, <CODE>InitCommonControls()</CODE> is adequate
+and simpler.
+
+<H2>Toolbars</H2>
+
+<P>
+You can create a toolbar using <CODE>CreateToolbarEx()</CODE> but I'm not going
+to, so there.  First thing you need to do is actually create the toolbar...
+
+<PRE CLASS="SNIP">
+    hTool = CreateWindowEx(0, TOOLBARCLASSNAME, NULL, WS_CHILD | WS_VISIBLE, 0, 0, 0, 0,
+        hwnd, (HMENU)IDC_MAIN_TOOL, GetModuleHandle(NULL), NULL);
+</PRE>
+
+<P>
+That's simple enough, <CODE>TOOLBARCLASSNAME</CODE> is a constant defined by the
+common control headers. <CODE>hwnd</CODE> is the parent window, the one you
+want to put the toolbar in.  <CODE>IDC_MAIN_TOOL</CODE> is an identifier that you can
+use later to get the <CODE>HWND</CODE> of the toolbar using <CODE>GetDlgItem()</CODE>,
+if you so desire.
+
+<PRE CLASS="SNIP">
+     // Send the TB_BUTTONSTRUCTSIZE message, which is required for
+     // backward compatibility.
+     SendMessage(hTool, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
+</PRE>
+
+<P>
+This message is required to let the system figure out which version of the common controls library 
+you are using.  Since new versions add new stuff to the structure, by giving it the size it can figure
+out what behaviour you are expecting.
+
+<H3>Toolbar buttons</H3>
+
+Button bitmaps on basic toolbars come in two varieties, standard buttons that are provided by comctl32, and
+user defined buttons that you create yourself.
+
+<B>NOTE:</B> Buttons and bitmaps are added to toolbars seperately... first you add a list of images
+to use, and THEN you add a list of buttons, and telling it which button uses which image.
+
+<H3>Adding Standard Buttons</H3>
+
+Now that we have a toolbar created, we need to add some buttons to it.  The most common bitmaps
+are available in the common control library itself, so we don't need to recreate them or 
+add them to every exe that uses them.
+
+<P>
+First we declare a <CODE>TBBUTTON</CODE> and <CODE>TBADDBITMAP</CODE>
+
+<PRE CLASS="SNIP">
+    TBBUTTON tbb[3];
+    TBADDBITMAP tbab;
+</PRE>
+
+And then we add the standard bitmaps to the toolbar, using the imagelist predefined in 
+the common control library...
+
+<PRE CLASS="SNIP">
+    tbab.hInst = HINST_COMMCTRL;
+    tbab.nID = IDB_STD_SMALL_COLOR;
+    SendMessage(hTool, TB_ADDBITMAP, 0, (LPARAM)&tbab);
+</PRE>
+
+Now that we have our images loaded up, we can add some buttons that use them...
+
+<PRE CLASS="SNIP">
+    ZeroMemory(tbb, sizeof(tbb));
+    tbb[0].iBitmap = STD_FILENEW;
+    tbb[0].fsState = TBSTATE_ENABLED;
+    tbb[0].fsStyle = TBSTYLE_BUTTON;
+    tbb[0].idCommand = ID_FILE_NEW;
+
+    tbb[1].iBitmap = STD_FILEOPEN;
+    tbb[1].fsState = TBSTATE_ENABLED;
+    tbb[1].fsStyle = TBSTYLE_BUTTON;
+    tbb[1].idCommand = ID_FILE_OPEN;
+
+    tbb[2].iBitmap = STD_FILESAVE;
+    tbb[2].fsState = TBSTATE_ENABLED;
+    tbb[2].fsStyle = TBSTYLE_BUTTON;
+    tbb[2].idCommand = ID_FILE_SAVEAS;
+
+    SendMessage(hTool, TB_ADDBUTTONS, sizeof(tbb)/sizeof(TBBUTTON), (LPARAM)&tbb);
+</PRE>
+
+Here we've added a New, Open and Save As button using the standard images, which is always
+a good idea since people are used to seeing them and they know what they mean.
+
+<P>
+The indexes of each image in the imagelist are defined in the common control headers and are
+listed in MSDN.
+
+<P>
+We have assigned each button an ID (<CODE>ID_FILE_NEW</CODE> etc...) which is identical to the IDs of the
+equivalent menu items.  These buttons will generate <CODE>WM_COMMAND</CODE> messages identical to the menu,
+so no extra processing is required!  If we were adding a button for a command that didn't already
+have a menu item, we would simply pick a new ID for it and add a handler to <CODE>WM_COMMAND</CODE>.
+
+<P>
+If you're wondering what's up with the funky <CODE>wParam</CODE> I passed to <CODE>TB_ADDBUTTONS</CODE>
+it's doing a calculation of the number of buttons in the array tbb so that we don't need to
+hardcode a value.  If I put in 3 instead it would still be correct, but as soon as I added another
+button I'd have to change it to 4 and in programming that's bad... you want one change to cause
+as few other changes as possible.  For example if the <CODE>sizeof(TBBUTTON)</CODE> was 16 bytes
+(I made that up, it actually varies by platform) then since we have 3 buttons the <CODE>sizeof(tbb)</CODE>
+would be 16 * 3 or 48.  Therefor 48/16 gives us the number of buttons, 3.
+
+<H2>Status bars</H2>
+
+Something often found in apps with toolbars are status bars, the little things at the bottom of
+the window that display information.  They're pretty simple to use, just create...
+
+<PRE CLASS="SNIP">
+    hStatus = CreateWindowEx(0, STATUSCLASSNAME, NULL,
+        WS_CHILD | WS_VISIBLE | SBARS_SIZEGRIP, 0, 0, 0, 0,
+        hwnd, (HMENU)IDC_MAIN_STATUS, GetModuleHandle(NULL), NULL);
+</PRE>
+
+And then (optionally) set the number of sections that you want.  If you don't set any,
+it will simply have one section using the entire width of the bar, and you can set and retreive
+the text with <CODE>SetWindowText()</CODE> as with many other controls.  For more than one
+part, you need to give the widths of each section, and then use <CODE>SB_SETTEXT</CODE> to
+set the text of each one.
+
+<P>
+To define the widths, we declare an array of <CODE>int</CODE>s, where each value is the
+width in pixels of a section.  If you want one section to use up any remaining space, set
+it's width to <CODE>-1</CODE>.
+
+<PRE CLASS="SNIP">
+    int statwidths[] = {100, -1};
+
+    SendMessage(hStatus, SB_SETPARTS, sizeof(statwidths)/sizeof(int), (LPARAM)statwidths);
+    SendMessage(hStatus, SB_SETTEXT, 0, (LPARAM)"Hi there :)");
+</PRE>
+
+<P>
+The wParam again is our calculation of how many elements are in the array.  Once we're done 
+adding sections, we set the first one (index <CODE>0</CODE>) to see it in action.
+
+<H2>Proper Sizing</H2>
+
+Unlike menus, tool and status bars are seperate controls that live inside the parent window's 
+client area.  Therefor if we just leave our <CODE>WM_SIZE</CODE> code from before, they are going to overlap 
+with the edit control we added in the previous examples.  This is a simple matter to correct...
+in <CODE>WM_SIZE</CODE>, we move the tool and status bars into position, and then subtract their
+heights and positions from the client area so that we can move our edit control to fill the remaining
+space...
+
+<PRE CLASS="SNIP">
+    HWND hTool;
+    RECT rcTool;
+    int iToolHeight;
+
+    HWND hStatus;
+    RECT rcStatus;
+    int iStatusHeight;
+
+    HWND hEdit;
+    int iEditHeight;
+    RECT rcClient;
+
+    // Size toolbar and get height
+
+    hTool = GetDlgItem(hwnd, IDC_MAIN_TOOL);
+    SendMessage(hTool, TB_AUTOSIZE, 0, 0);
+
+    GetWindowRect(hTool, &rcTool);
+    iToolHeight = rcTool.bottom - rcTool.top;
+
+    // Size status bar and get height
+
+    hStatus = GetDlgItem(hwnd, IDC_MAIN_STATUS);
+    SendMessage(hStatus, WM_SIZE, 0, 0);
+
+    GetWindowRect(hStatus, &rcStatus);
+    iStatusHeight = rcStatus.bottom - rcStatus.top;
+
+    // Calculate remaining height and size edit
+
+    GetClientRect(hwnd, &rcClient);
+
+    iEditHeight = rcClient.bottom - iToolHeight - iStatusHeight;
+
+    hEdit = GetDlgItem(hwnd, IDC_MAIN_EDIT);
+    SetWindowPos(hEdit, NULL, 0, iToolHeight, rcClient.right, iEditHeight, SWP_NOZORDER);
+</PRE>
+
+<P>
+Unfortunately it's a somewhat long code snippet, but it's quite simple... toolbars will
+auto position themselves when sent the <CODE>TB_AUTOSIZE</CODE> message, and status bars will do the
+same if you send them <CODE>WM_SIZE</CODE> (the common control libraries are not known for consistancy).
+
+            </TD>
+        </TR>
+	<TR>
+		<TD CLASS="SECONDARYLEFT" WIDTH="120" ALIGN="center" VALIGN="bottom">
+		&nbsp;
+		</TD>
+	</TR>
+        </TABLE>
+    </TD>
+</TR>
+<TR>
+    <TD CLASS="PRIMARYFOOTER" HEIGHT="20">
+	Copyright &copy; 1998-2022, Brook Miles (<a href="mailto:tutorial(nospam)winprog.org">tutorial(nospam)winprog.org</a>).  All rights reserved.
+</TD>
+</TR>
+</TABLE>
+
+<script type="text/javascript">
+<!--
+   var re = /\(nospam\)/ig;
+   var str;
+
+   for(i = 0;i < document.links.length;i++)
+   {
+      var link = document.links[i];
+	  var str = link.href;
+      link.href = str.replace(re, "@");
+
+	  str = link.innerHTML;
+      link.innerHTML = str.replace(re, "@");
+   }
+-->
+</script>
+
+</BODY>
+
+<!-- Mirrored from www.winprog.org/tutorial/app_three.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 02:45:00 GMT -->
+</HTML>
