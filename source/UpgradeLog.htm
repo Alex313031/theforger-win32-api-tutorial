@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Migration Report
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          Migration Report - tutorial</h1><div id="content"><h2 _locID="OverviewTitle">Overview</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">Project</th><th _locID="PathTableHeader">Path</th><th _locID="ErrorsTableHeader">Errors</th><th _locID="WarningsTableHeader">Warnings</th><th _locID="MessagesTableHeader">Messages</th></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#anim_one">anim_one</a></strong></td><td>anim_one\anim_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#anim_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('anim_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#app_four">app_four</a></strong></td><td>app_four\app_four.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#app_fourWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('app_four'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#app_one">app_one</a></strong></td><td>app_one\app_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#app_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('app_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#app_three">app_three</a></strong></td><td>app_three\app_three.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#app_threeWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('app_three'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#app_two">app_two</a></strong></td><td>app_two\app_two.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#app_twoWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('app_two'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#bmp_one">bmp_one</a></strong></td><td>bmp_one\bmp_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#bmp_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('bmp_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#bmp_two">bmp_two</a></strong></td><td>bmp_two\bmp_two.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#bmp_twoWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('bmp_two'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#ctl_one">ctl_one</a></strong></td><td>ctl_one\ctl_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#ctl_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('ctl_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#dlg_one">dlg_one</a></strong></td><td>dlg_one\dlg_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#dlg_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('dlg_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#dlg_three">dlg_three</a></strong></td><td>dlg_three\dlg_three.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#dlg_threeWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('dlg_three'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#dlg_two">dlg_two</a></strong></td><td>dlg_two\dlg_two.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#dlg_twoWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('dlg_two'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#font_one">font_one</a></strong></td><td>font_one\font_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#font_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('font_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#menu_one">menu_one</a></strong></td><td>menu_one\menu_one.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#menu_oneWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('menu_one'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#menu_two">menu_two</a></strong></td><td>menu_two\menu_two.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#menu_twoWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('menu_two'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#simple_window">simple_window</a></strong></td><td>simple_window\simple_window.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#simple_windowWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('simple_window'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#test">test</a></strong></td><td>test\test.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#testWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('test'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#window_click">window_click</a></strong></td><td>window_click\window_click.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#window_clickWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('window_click'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">Solution</span></a></strong></td><td>tutorial.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">Solution and projects</h2><div id="messages"><a name="anim_one" /><h3>anim_one</h3><table><tr id="anim_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassanim_one"><td class="IconWarningEncoded"><a name="anim_oneWarning" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassanim_one"><td class="IconWarningEncoded"><a name="anim_oneWarning" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\anim_one\Debug\anim_one.exe') does not match the Librarian's OutputFile property value '.\Debug\anim_one.exe' ('C:\repos\tut\source\Debug\anim_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassanim_one"><td class="IconWarningEncoded"><a name="anim_oneWarning" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\anim_one\Debug\anim_one.exe') does not match the Linker's OutputFile property value '.\Debug/anim_one.exe' ('C:\repos\tut\source\Debug/anim_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassanim_one"><td class="IconWarningEncoded"><a name="anim_oneWarning" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\anim_one\Release\anim_one.exe') does not match the Librarian's OutputFile property value '.\Release\anim_one.exe' ('C:\repos\tut\source\Release\anim_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassanim_one"><td class="IconWarningEncoded"><a name="anim_oneWarning" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\anim_one\Release\anim_one.exe') does not match the Linker's OutputFile property value '.\Release/anim_one.exe' ('C:\repos\tut\source\Release/anim_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowanim_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="anim_oneMessage" onclick="ToggleMessageVisibility('anim_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassanim_one" style="display: none"><td class="IconInfoEncoded"><a name="anim_oneMessage" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\anim_one\anim_one.vcproj'.</span></td></tr><tr name="MessageRowClassanim_one" style="display: none"><td class="IconInfoEncoded"><a name="anim_oneMessage" /></td><td class="messageCell"><strong>anim_one\anim_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\anim_one\anim_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideanim_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="anim_oneMessage" onclick="ToggleMessageVisibility('anim_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="app_four" /><h3>app_four</h3><table><tr id="app_fourHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassapp_four"><td class="IconWarningEncoded"><a name="app_fourWarning" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassapp_four"><td class="IconWarningEncoded"><a name="app_fourWarning" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_four\Debug\app_four.exe') does not match the Librarian's OutputFile property value '.\Debug\app_four.exe' ('C:\repos\tut\source\Debug\app_four.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_four"><td class="IconWarningEncoded"><a name="app_fourWarning" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_four\Debug\app_four.exe') does not match the Linker's OutputFile property value '.\Debug/app_four.exe' ('C:\repos\tut\source\Debug/app_four.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassapp_four"><td class="IconWarningEncoded"><a name="app_fourWarning" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_four\Release\app_four.exe') does not match the Librarian's OutputFile property value '.\Release\app_four.exe' ('C:\repos\tut\source\Release\app_four.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_four"><td class="IconWarningEncoded"><a name="app_fourWarning" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_four\Release\app_four.exe') does not match the Linker's OutputFile property value '.\Release/app_four.exe' ('C:\repos\tut\source\Release/app_four.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowapp_four"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="app_fourMessage" onclick="ToggleMessageVisibility('app_four'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassapp_four" style="display: none"><td class="IconInfoEncoded"><a name="app_fourMessage" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\app_four\app_four.vcproj'.</span></td></tr><tr name="MessageRowClassapp_four" style="display: none"><td class="IconInfoEncoded"><a name="app_fourMessage" /></td><td class="messageCell"><strong>app_four\app_four.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\app_four\app_four.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideapp_four"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="app_fourMessage" onclick="ToggleMessageVisibility('app_four'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="app_one" /><h3>app_one</h3><table><tr id="app_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassapp_one"><td class="IconWarningEncoded"><a name="app_oneWarning" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassapp_one"><td class="IconWarningEncoded"><a name="app_oneWarning" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_one\Debug\app_one.exe') does not match the Librarian's OutputFile property value '.\Debug\app_one.exe' ('C:\repos\tut\source\Debug\app_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_one"><td class="IconWarningEncoded"><a name="app_oneWarning" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_one\Debug\app_one.exe') does not match the Linker's OutputFile property value '.\Debug/app_one.exe' ('C:\repos\tut\source\Debug/app_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassapp_one"><td class="IconWarningEncoded"><a name="app_oneWarning" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_one\Release\app_one.exe') does not match the Librarian's OutputFile property value '.\Release\app_one.exe' ('C:\repos\tut\source\Release\app_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_one"><td class="IconWarningEncoded"><a name="app_oneWarning" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_one\Release\app_one.exe') does not match the Linker's OutputFile property value '.\Release/app_one.exe' ('C:\repos\tut\source\Release/app_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowapp_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="app_oneMessage" onclick="ToggleMessageVisibility('app_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassapp_one" style="display: none"><td class="IconInfoEncoded"><a name="app_oneMessage" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\app_one\app_one.vcproj'.</span></td></tr><tr name="MessageRowClassapp_one" style="display: none"><td class="IconInfoEncoded"><a name="app_oneMessage" /></td><td class="messageCell"><strong>app_one\app_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\app_one\app_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideapp_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="app_oneMessage" onclick="ToggleMessageVisibility('app_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="app_three" /><h3>app_three</h3><table><tr id="app_threeHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassapp_three"><td class="IconWarningEncoded"><a name="app_threeWarning" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassapp_three"><td class="IconWarningEncoded"><a name="app_threeWarning" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_three\Debug\app_three.exe') does not match the Librarian's OutputFile property value '.\Debug\app_three.exe' ('C:\repos\tut\source\Debug\app_three.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_three"><td class="IconWarningEncoded"><a name="app_threeWarning" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_three\Debug\app_three.exe') does not match the Linker's OutputFile property value '.\Debug/app_three.exe' ('C:\repos\tut\source\Debug/app_three.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassapp_three"><td class="IconWarningEncoded"><a name="app_threeWarning" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_three\Release\app_three.exe') does not match the Librarian's OutputFile property value '.\Release\app_three.exe' ('C:\repos\tut\source\Release\app_three.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_three"><td class="IconWarningEncoded"><a name="app_threeWarning" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_three\Release\app_three.exe') does not match the Linker's OutputFile property value '.\Release/app_three.exe' ('C:\repos\tut\source\Release/app_three.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowapp_three"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="app_threeMessage" onclick="ToggleMessageVisibility('app_three'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassapp_three" style="display: none"><td class="IconInfoEncoded"><a name="app_threeMessage" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\app_three\app_three.vcproj'.</span></td></tr><tr name="MessageRowClassapp_three" style="display: none"><td class="IconInfoEncoded"><a name="app_threeMessage" /></td><td class="messageCell"><strong>app_three\app_three.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\app_three\app_three.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideapp_three"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="app_threeMessage" onclick="ToggleMessageVisibility('app_three'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="app_two" /><h3>app_two</h3><table><tr id="app_twoHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassapp_two"><td class="IconWarningEncoded"><a name="app_twoWarning" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassapp_two"><td class="IconWarningEncoded"><a name="app_twoWarning" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_two\Debug\app_two.exe') does not match the Librarian's OutputFile property value '.\Debug\app_two.exe' ('C:\repos\tut\source\Debug\app_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_two"><td class="IconWarningEncoded"><a name="app_twoWarning" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_two\Debug\app_two.exe') does not match the Linker's OutputFile property value '.\Debug/app_two.exe' ('C:\repos\tut\source\Debug/app_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassapp_two"><td class="IconWarningEncoded"><a name="app_twoWarning" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_two\Release\app_two.exe') does not match the Librarian's OutputFile property value '.\Release\app_two.exe' ('C:\repos\tut\source\Release\app_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassapp_two"><td class="IconWarningEncoded"><a name="app_twoWarning" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\app_two\Release\app_two.exe') does not match the Linker's OutputFile property value '.\Release/app_two.exe' ('C:\repos\tut\source\Release/app_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowapp_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="app_twoMessage" onclick="ToggleMessageVisibility('app_two'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassapp_two" style="display: none"><td class="IconInfoEncoded"><a name="app_twoMessage" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\app_two\app_two.vcproj'.</span></td></tr><tr name="MessageRowClassapp_two" style="display: none"><td class="IconInfoEncoded"><a name="app_twoMessage" /></td><td class="messageCell"><strong>app_two\app_two.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\app_two\app_two.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideapp_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="app_twoMessage" onclick="ToggleMessageVisibility('app_two'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="bmp_one" /><h3>bmp_one</h3><table><tr id="bmp_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassbmp_one"><td class="IconWarningEncoded"><a name="bmp_oneWarning" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassbmp_one"><td class="IconWarningEncoded"><a name="bmp_oneWarning" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_one\Debug\bmp_one.exe') does not match the Librarian's OutputFile property value '.\Debug\bmp_one.exe' ('C:\repos\tut\source\Debug\bmp_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_one"><td class="IconWarningEncoded"><a name="bmp_oneWarning" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_one\Debug\bmp_one.exe') does not match the Linker's OutputFile property value '.\Debug/bmp_one.exe' ('C:\repos\tut\source\Debug/bmp_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_one"><td class="IconWarningEncoded"><a name="bmp_oneWarning" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_one\Release\bmp_one.exe') does not match the Librarian's OutputFile property value '.\Release\bmp_one.exe' ('C:\repos\tut\source\Release\bmp_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_one"><td class="IconWarningEncoded"><a name="bmp_oneWarning" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_one\Release\bmp_one.exe') does not match the Linker's OutputFile property value '.\Release/bmp_one.exe' ('C:\repos\tut\source\Release/bmp_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowbmp_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="bmp_oneMessage" onclick="ToggleMessageVisibility('bmp_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassbmp_one" style="display: none"><td class="IconInfoEncoded"><a name="bmp_oneMessage" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\bmp_one\bmp_one.vcproj'.</span></td></tr><tr name="MessageRowClassbmp_one" style="display: none"><td class="IconInfoEncoded"><a name="bmp_oneMessage" /></td><td class="messageCell"><strong>bmp_one\bmp_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\bmp_one\bmp_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidebmp_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="bmp_oneMessage" onclick="ToggleMessageVisibility('bmp_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="bmp_two" /><h3>bmp_two</h3><table><tr id="bmp_twoHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassbmp_two"><td class="IconWarningEncoded"><a name="bmp_twoWarning" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassbmp_two"><td class="IconWarningEncoded"><a name="bmp_twoWarning" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_two\Debug\bmp_two.exe') does not match the Librarian's OutputFile property value '.\Debug\bmp_two.exe' ('C:\repos\tut\source\Debug\bmp_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_two"><td class="IconWarningEncoded"><a name="bmp_twoWarning" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_two\Debug\bmp_two.exe') does not match the Linker's OutputFile property value '.\Debug/bmp_two.exe' ('C:\repos\tut\source\Debug/bmp_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_two"><td class="IconWarningEncoded"><a name="bmp_twoWarning" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_two\Release\bmp_two.exe') does not match the Librarian's OutputFile property value '.\Release\bmp_two.exe' ('C:\repos\tut\source\Release\bmp_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassbmp_two"><td class="IconWarningEncoded"><a name="bmp_twoWarning" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\bmp_two\Release\bmp_two.exe') does not match the Linker's OutputFile property value '.\Release/bmp_two.exe' ('C:\repos\tut\source\Release/bmp_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowbmp_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="bmp_twoMessage" onclick="ToggleMessageVisibility('bmp_two'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassbmp_two" style="display: none"><td class="IconInfoEncoded"><a name="bmp_twoMessage" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\bmp_two\bmp_two.vcproj'.</span></td></tr><tr name="MessageRowClassbmp_two" style="display: none"><td class="IconInfoEncoded"><a name="bmp_twoMessage" /></td><td class="messageCell"><strong>bmp_two\bmp_two.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\bmp_two\bmp_two.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidebmp_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="bmp_twoMessage" onclick="ToggleMessageVisibility('bmp_two'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="ctl_one" /><h3>ctl_one</h3><table><tr id="ctl_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassctl_one"><td class="IconWarningEncoded"><a name="ctl_oneWarning" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassctl_one"><td class="IconWarningEncoded"><a name="ctl_oneWarning" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\ctl_one\Debug\ctl_one.exe') does not match the Librarian's OutputFile property value '.\Debug\ctl_one.exe' ('C:\repos\tut\source\Debug\ctl_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassctl_one"><td class="IconWarningEncoded"><a name="ctl_oneWarning" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\ctl_one\Debug\ctl_one.exe') does not match the Linker's OutputFile property value '.\Debug/ctl_one.exe' ('C:\repos\tut\source\Debug/ctl_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassctl_one"><td class="IconWarningEncoded"><a name="ctl_oneWarning" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\ctl_one\Release\ctl_one.exe') does not match the Librarian's OutputFile property value '.\Release\ctl_one.exe' ('C:\repos\tut\source\Release\ctl_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassctl_one"><td class="IconWarningEncoded"><a name="ctl_oneWarning" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\ctl_one\Release\ctl_one.exe') does not match the Linker's OutputFile property value '.\Release/ctl_one.exe' ('C:\repos\tut\source\Release/ctl_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowctl_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="ctl_oneMessage" onclick="ToggleMessageVisibility('ctl_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassctl_one" style="display: none"><td class="IconInfoEncoded"><a name="ctl_oneMessage" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\ctl_one\ctl_one.vcproj'.</span></td></tr><tr name="MessageRowClassctl_one" style="display: none"><td class="IconInfoEncoded"><a name="ctl_oneMessage" /></td><td class="messageCell"><strong>ctl_one\ctl_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\ctl_one\ctl_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidectl_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="ctl_oneMessage" onclick="ToggleMessageVisibility('ctl_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="dlg_one" /><h3>dlg_one</h3><table><tr id="dlg_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassdlg_one"><td class="IconWarningEncoded"><a name="dlg_oneWarning" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassdlg_one"><td class="IconWarningEncoded"><a name="dlg_oneWarning" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_one\Debug\dlg_one.exe') does not match the Librarian's OutputFile property value '.\Debug\dlg_one.exe' ('C:\repos\tut\source\Debug\dlg_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_one"><td class="IconWarningEncoded"><a name="dlg_oneWarning" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_one\Debug\dlg_one.exe') does not match the Linker's OutputFile property value '.\Debug/dlg_one.exe' ('C:\repos\tut\source\Debug/dlg_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_one"><td class="IconWarningEncoded"><a name="dlg_oneWarning" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_one\Release\dlg_one.exe') does not match the Librarian's OutputFile property value '.\Release\dlg_one.exe' ('C:\repos\tut\source\Release\dlg_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_one"><td class="IconWarningEncoded"><a name="dlg_oneWarning" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_one\Release\dlg_one.exe') does not match the Linker's OutputFile property value '.\Release/dlg_one.exe' ('C:\repos\tut\source\Release/dlg_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowdlg_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="dlg_oneMessage" onclick="ToggleMessageVisibility('dlg_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassdlg_one" style="display: none"><td class="IconInfoEncoded"><a name="dlg_oneMessage" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\dlg_one\dlg_one.vcproj'.</span></td></tr><tr name="MessageRowClassdlg_one" style="display: none"><td class="IconInfoEncoded"><a name="dlg_oneMessage" /></td><td class="messageCell"><strong>dlg_one\dlg_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\dlg_one\dlg_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedlg_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="dlg_oneMessage" onclick="ToggleMessageVisibility('dlg_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="dlg_three" /><h3>dlg_three</h3><table><tr id="dlg_threeHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassdlg_three"><td class="IconWarningEncoded"><a name="dlg_threeWarning" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassdlg_three"><td class="IconWarningEncoded"><a name="dlg_threeWarning" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_three\Debug\dlg_three.exe') does not match the Librarian's OutputFile property value '.\Debug\dlg_three.exe' ('C:\repos\tut\source\Debug\dlg_three.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_three"><td class="IconWarningEncoded"><a name="dlg_threeWarning" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_three\Debug\dlg_three.exe') does not match the Linker's OutputFile property value '.\Debug/dlg_three.exe' ('C:\repos\tut\source\Debug/dlg_three.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_three"><td class="IconWarningEncoded"><a name="dlg_threeWarning" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_three\Release\dlg_three.exe') does not match the Librarian's OutputFile property value '.\Release\dlg_three.exe' ('C:\repos\tut\source\Release\dlg_three.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_three"><td class="IconWarningEncoded"><a name="dlg_threeWarning" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_three\Release\dlg_three.exe') does not match the Linker's OutputFile property value '.\Release/dlg_three.exe' ('C:\repos\tut\source\Release/dlg_three.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowdlg_three"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="dlg_threeMessage" onclick="ToggleMessageVisibility('dlg_three'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassdlg_three" style="display: none"><td class="IconInfoEncoded"><a name="dlg_threeMessage" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\dlg_three\dlg_three.vcproj'.</span></td></tr><tr name="MessageRowClassdlg_three" style="display: none"><td class="IconInfoEncoded"><a name="dlg_threeMessage" /></td><td class="messageCell"><strong>dlg_three\dlg_three.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\dlg_three\dlg_three.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedlg_three"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="dlg_threeMessage" onclick="ToggleMessageVisibility('dlg_three'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="dlg_two" /><h3>dlg_two</h3><table><tr id="dlg_twoHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassdlg_two"><td class="IconWarningEncoded"><a name="dlg_twoWarning" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassdlg_two"><td class="IconWarningEncoded"><a name="dlg_twoWarning" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_two\Debug\dlg_two.exe') does not match the Librarian's OutputFile property value '.\Debug\dlg_two.exe' ('C:\repos\tut\source\Debug\dlg_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_two"><td class="IconWarningEncoded"><a name="dlg_twoWarning" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_two\Debug\dlg_two.exe') does not match the Linker's OutputFile property value '.\Debug/dlg_two.exe' ('C:\repos\tut\source\Debug/dlg_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_two"><td class="IconWarningEncoded"><a name="dlg_twoWarning" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_two\Release\dlg_two.exe') does not match the Librarian's OutputFile property value '.\Release\dlg_two.exe' ('C:\repos\tut\source\Release\dlg_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdlg_two"><td class="IconWarningEncoded"><a name="dlg_twoWarning" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\dlg_two\Release\dlg_two.exe') does not match the Linker's OutputFile property value '.\Release/dlg_two.exe' ('C:\repos\tut\source\Release/dlg_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowdlg_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="dlg_twoMessage" onclick="ToggleMessageVisibility('dlg_two'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassdlg_two" style="display: none"><td class="IconInfoEncoded"><a name="dlg_twoMessage" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\dlg_two\dlg_two.vcproj'.</span></td></tr><tr name="MessageRowClassdlg_two" style="display: none"><td class="IconInfoEncoded"><a name="dlg_twoMessage" /></td><td class="messageCell"><strong>dlg_two\dlg_two.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\dlg_two\dlg_two.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedlg_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="dlg_twoMessage" onclick="ToggleMessageVisibility('dlg_two'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="font_one" /><h3>font_one</h3><table><tr id="font_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassfont_one"><td class="IconWarningEncoded"><a name="font_oneWarning" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassfont_one"><td class="IconWarningEncoded"><a name="font_oneWarning" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\font_one\Debug\font_one.exe') does not match the Librarian's OutputFile property value '.\Debug\font_one.exe' ('C:\repos\tut\source\Debug\font_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassfont_one"><td class="IconWarningEncoded"><a name="font_oneWarning" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\font_one\Debug\font_one.exe') does not match the Linker's OutputFile property value '.\Debug/font_one.exe' ('C:\repos\tut\source\Debug/font_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassfont_one"><td class="IconWarningEncoded"><a name="font_oneWarning" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\font_one\Release\font_one.exe') does not match the Librarian's OutputFile property value '.\Release\font_one.exe' ('C:\repos\tut\source\Release\font_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassfont_one"><td class="IconWarningEncoded"><a name="font_oneWarning" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\font_one\Release\font_one.exe') does not match the Linker's OutputFile property value '.\Release/font_one.exe' ('C:\repos\tut\source\Release/font_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowfont_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="font_oneMessage" onclick="ToggleMessageVisibility('font_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassfont_one" style="display: none"><td class="IconInfoEncoded"><a name="font_oneMessage" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\font_one\font_one.vcproj'.</span></td></tr><tr name="MessageRowClassfont_one" style="display: none"><td class="IconInfoEncoded"><a name="font_oneMessage" /></td><td class="messageCell"><strong>font_one\font_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\font_one\font_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidefont_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="font_oneMessage" onclick="ToggleMessageVisibility('font_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="menu_one" /><h3>menu_one</h3><table><tr id="menu_oneHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassmenu_one"><td class="IconWarningEncoded"><a name="menu_oneWarning" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassmenu_one"><td class="IconWarningEncoded"><a name="menu_oneWarning" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_one\Debug\menu_one.exe') does not match the Librarian's OutputFile property value '.\Debug\menu_one.exe' ('C:\repos\tut\source\Debug\menu_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_one"><td class="IconWarningEncoded"><a name="menu_oneWarning" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_one\Debug\menu_one.exe') does not match the Linker's OutputFile property value '.\Debug/menu_one.exe' ('C:\repos\tut\source\Debug/menu_one.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_one"><td class="IconWarningEncoded"><a name="menu_oneWarning" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_one\Release\menu_one.exe') does not match the Librarian's OutputFile property value '.\Release\menu_one.exe' ('C:\repos\tut\source\Release\menu_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_one"><td class="IconWarningEncoded"><a name="menu_oneWarning" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_one\Release\menu_one.exe') does not match the Linker's OutputFile property value '.\Release/menu_one.exe' ('C:\repos\tut\source\Release/menu_one.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowmenu_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="menu_oneMessage" onclick="ToggleMessageVisibility('menu_one'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassmenu_one" style="display: none"><td class="IconInfoEncoded"><a name="menu_oneMessage" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\menu_one\menu_one.vcproj'.</span></td></tr><tr name="MessageRowClassmenu_one" style="display: none"><td class="IconInfoEncoded"><a name="menu_oneMessage" /></td><td class="messageCell"><strong>menu_one\menu_one.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\menu_one\menu_one.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidemenu_one"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="menu_oneMessage" onclick="ToggleMessageVisibility('menu_one'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="menu_two" /><h3>menu_two</h3><table><tr id="menu_twoHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassmenu_two"><td class="IconWarningEncoded"><a name="menu_twoWarning" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassmenu_two"><td class="IconWarningEncoded"><a name="menu_twoWarning" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_two\Debug\menu_two.exe') does not match the Librarian's OutputFile property value '.\Debug\menu_two.exe' ('C:\repos\tut\source\Debug\menu_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_two"><td class="IconWarningEncoded"><a name="menu_twoWarning" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_two\Debug\menu_two.exe') does not match the Linker's OutputFile property value '.\Debug/menu_two.exe' ('C:\repos\tut\source\Debug/menu_two.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_two"><td class="IconWarningEncoded"><a name="menu_twoWarning" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_two\Release\menu_two.exe') does not match the Librarian's OutputFile property value '.\Release\menu_two.exe' ('C:\repos\tut\source\Release\menu_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassmenu_two"><td class="IconWarningEncoded"><a name="menu_twoWarning" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\menu_two\Release\menu_two.exe') does not match the Linker's OutputFile property value '.\Release/menu_two.exe' ('C:\repos\tut\source\Release/menu_two.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowmenu_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="menu_twoMessage" onclick="ToggleMessageVisibility('menu_two'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassmenu_two" style="display: none"><td class="IconInfoEncoded"><a name="menu_twoMessage" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\menu_two\menu_two.vcproj'.</span></td></tr><tr name="MessageRowClassmenu_two" style="display: none"><td class="IconInfoEncoded"><a name="menu_twoMessage" /></td><td class="messageCell"><strong>menu_two\menu_two.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\menu_two\menu_two.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidemenu_two"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="menu_twoMessage" onclick="ToggleMessageVisibility('menu_two'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="simple_window" /><h3>simple_window</h3><table><tr id="simple_windowHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasssimple_window"><td class="IconWarningEncoded"><a name="simple_windowWarning" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasssimple_window"><td class="IconWarningEncoded"><a name="simple_windowWarning" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\simple_window\Debug\simple_window.exe') does not match the Librarian's OutputFile property value '.\Debug\simple_window.exe' ('C:\repos\tut\source\Debug\simple_window.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasssimple_window"><td class="IconWarningEncoded"><a name="simple_windowWarning" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\simple_window\Debug\simple_window.exe') does not match the Linker's OutputFile property value '.\Debug/simple_window.exe' ('C:\repos\tut\source\Debug/simple_window.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasssimple_window"><td class="IconWarningEncoded"><a name="simple_windowWarning" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\simple_window\Release\simple_window.exe') does not match the Librarian's OutputFile property value '.\Release\simple_window.exe' ('C:\repos\tut\source\Release\simple_window.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasssimple_window"><td class="IconWarningEncoded"><a name="simple_windowWarning" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\simple_window\Release\simple_window.exe') does not match the Linker's OutputFile property value '.\Release/simple_window.exe' ('C:\repos\tut\source\Release/simple_window.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowsimple_window"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="simple_windowMessage" onclick="ToggleMessageVisibility('simple_window'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClasssimple_window" style="display: none"><td class="IconInfoEncoded"><a name="simple_windowMessage" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\simple_window\simple_window.vcproj'.</span></td></tr><tr name="MessageRowClasssimple_window" style="display: none"><td class="IconInfoEncoded"><a name="simple_windowMessage" /></td><td class="messageCell"><strong>simple_window\simple_window.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\simple_window\simple_window.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidesimple_window"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="simple_windowMessage" onclick="ToggleMessageVisibility('simple_window'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="test" /><h3>test</h3><table><tr id="testHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasstest"><td class="IconWarningEncoded"><a name="testWarning" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstest"><td class="IconWarningEncoded"><a name="testWarning" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\test\Debug\test.exe') does not match the Librarian's OutputFile property value '.\Debug\test.exe' ('C:\repos\tut\source\Debug\test.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstest"><td class="IconWarningEncoded"><a name="testWarning" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\test\Debug\test.exe') does not match the Linker's OutputFile property value '.\Debug/test.exe' ('C:\repos\tut\source\Debug/test.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstest"><td class="IconWarningEncoded"><a name="testWarning" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\test\Release\test.exe') does not match the Librarian's OutputFile property value '.\Release\test.exe' ('C:\repos\tut\source\Release\test.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstest"><td class="IconWarningEncoded"><a name="testWarning" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\test\Release\test.exe') does not match the Linker's OutputFile property value '.\Release/test.exe' ('C:\repos\tut\source\Release/test.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtest"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="testMessage" onclick="ToggleMessageVisibility('test'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClasstest" style="display: none"><td class="IconInfoEncoded"><a name="testMessage" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\test\test.vcproj'.</span></td></tr><tr name="MessageRowClasstest" style="display: none"><td class="IconInfoEncoded"><a name="testMessage" /></td><td class="messageCell"><strong>test\test.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\test\test.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetest"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="testMessage" onclick="ToggleMessageVisibility('test'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="window_click" /><h3>window_click</h3><table><tr id="window_clickHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasswindow_click"><td class="IconWarningEncoded"><a name="window_clickWarning" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasswindow_click"><td class="IconWarningEncoded"><a name="window_clickWarning" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\window_click\Debug\window_click.exe') does not match the Librarian's OutputFile property value '.\Debug\window_click.exe' ('C:\repos\tut\source\Debug\window_click.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasswindow_click"><td class="IconWarningEncoded"><a name="window_clickWarning" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\window_click\Debug\window_click.exe') does not match the Linker's OutputFile property value '.\Debug/window_click.exe' ('C:\repos\tut\source\Debug/window_click.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasswindow_click"><td class="IconWarningEncoded"><a name="window_clickWarning" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\window_click\Release\window_click.exe') does not match the Librarian's OutputFile property value '.\Release\window_click.exe' ('C:\repos\tut\source\Release\window_click.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasswindow_click"><td class="IconWarningEncoded"><a name="window_clickWarning" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\repos\tut\source\window_click\Release\window_click.exe') does not match the Linker's OutputFile property value '.\Release/window_click.exe' ('C:\repos\tut\source\Release/window_click.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowwindow_click"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="window_clickMessage" onclick="ToggleMessageVisibility('window_click'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClasswindow_click" style="display: none"><td class="IconInfoEncoded"><a name="window_clickMessage" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>Converting project file 'C:\repos\tut\source\window_click\window_click.vcproj'.</span></td></tr><tr name="MessageRowClasswindow_click" style="display: none"><td class="IconInfoEncoded"><a name="window_clickMessage" /></td><td class="messageCell"><strong>window_click\window_click.vcproj:
+        </strong><span>Done converting to new project file 'C:\repos\tut\source\window_click\window_click.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidewindow_click"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="window_clickMessage" onclick="ToggleMessageVisibility('window_click'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">Solution</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>tutorial.sln:
+        </strong><span>Visual Studio needs to make non-functional changes to this project in order to enable the project to open in released versions of Visual Studio newer than Visual Studio 2010 SP1 without impacting project behavior.</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>tutorial.sln:
+        </strong><span>File successfully backed up as C:\repos\tut\source\Backup\tutorial.sln</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>tutorial.sln:
+        </strong><span>Solution migrated successfully</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table></div></div></body></html>
