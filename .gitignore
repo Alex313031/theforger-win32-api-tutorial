@@ -26,8 +26,9 @@
 
 Debug/
 Release/
+x86/
 x64/
 *.out
 *.exe
-!/bin/Debug/*.exe
-!/bin/Release/*.exe
+!/bin/dbg/*.exe
+!/bin/rel/*.exe
